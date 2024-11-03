@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  color: white;
+  padding: 50px 100px;
+}
+
+h2,
+h1,
+p
+{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button{
+  cursor: pointer;
+}
+
+nav{
+  display: flex;
+  padding: 0 50px 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width:500px) {
+  body{
+    padding: 30px 20px;
+  }
+  nav{
+    display: flex;
+    padding: 0 0 50px;
+    justify-content: space-between;
+  }
+}

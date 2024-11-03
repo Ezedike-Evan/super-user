@@ -1,0 +1,24 @@
+#notConnectedContainer{
+    text-align: center;
+}
+#notConnectedContainer h1{
+    font-size:70px;
+    font-weight:900;
+    letter-spacing: 2px;
+}
+#notConnectedContainer p{
+    font-size:30px;
+    font-weight:700;
+    margin-top: 50px;
+}
+
+@media (max-width:500px) {
+    #notConnectedContainer h1{
+        font-size:40px;
+        letter-spacing: 1px;
+    }
+    #notConnectedContainer p{
+        font-size:15px;
+        margin-top: 20px;
+    }   
+}
