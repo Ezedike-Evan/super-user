@@ -51,6 +51,7 @@ const UserSignUpForm = () => {
                 window.location.reload()
             }
         } catch (error) {
+            console.error(error)
             window.location.reload()
         } finally {
             setIsSubmitting(false)
@@ -75,7 +76,7 @@ const UserSignUpForm = () => {
         <div id="userSignUpForm">
             <p>
                 Welcome onboard super team. 
-                Let's get you locked and loaded into this rich community of Solana devs, writers, designers, etc., 
+                Let&apos;s get you locked and loaded into this rich community of Solana devs, writers, designers, etc., 
                 passionate about building on Solana. Sign up now!!
             </p>
             <form onSubmit={handleUserSignUp}>

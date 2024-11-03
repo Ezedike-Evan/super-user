@@ -2,11 +2,11 @@ import mongoose, { Document, Schema} from 'mongoose'
 
 export interface IUser extends Document{
     walletPublicAddress : string,
-    name : String,
-    email : String,
-    telegram : String,
-    discord : String,
-    twitter : String,
+    name : string,
+    email : string,
+    telegram : string,
+    discord : string,
+    twitter : string,
 }
 
 const UserSchema:Schema = new mongoose.Schema({
