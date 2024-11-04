@@ -5,7 +5,6 @@ import User from "@/models/user"
 export async function GET(req:NextRequest){
     const url  = new URL(req.url)
     const walletPublicAddress = new URLSearchParams(url.searchParams).get('walletPublicAddress')
-    console.log(walletPublicAddress)
     await dbConnect()
 
     try {
@@ -14,12 +13,14 @@ export async function GET(req:NextRequest){
         if(user){
             return NextResponse.json({
                 message:'user found',
+                status: 200,
                 user
-            },{ status : 200 })
+            })
         }else {
             return NextResponse.json({
-                message : 'user not found'
-            },{ status : 404 })
+                message : 'user not found',
+                status : 300
+            })
         }
     } catch (error) {
         console.log('error',error)

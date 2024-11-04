@@ -1,4 +1,5 @@
-import WalletContext from "@/contexts/walletContext";
+import WalletContext from "@/contexts/walletContext"
+import { UserProvider } from "@/contexts/userContext"
 import type { Metadata } from "next";
 import "../styles/globals.css";
 
@@ -16,7 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <WalletContext>
-          {children}
+          <UserProvider>
+            {children}
+          </UserProvider>
         </WalletContext>
       </body>
     </html>
