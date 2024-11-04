@@ -26,6 +26,7 @@ const Dashboard = ()=>{
                 
             } else if(res.status == 300){
                 setIsSuperUser(false)
+                setIsLoading(false)
             }
         }catch(error){
             console.error(error)
