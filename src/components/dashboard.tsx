@@ -13,27 +13,27 @@ const Dashboard = ()=>{
     const {publicKey} = useWallet()
     const {setUser} = useUser()
 
-    // const validateUser = async()=>{
-    //     setIsLoading(true)
-    //     try{
-    //         const response = await fetch(`/api/users/get?walletPublicAddress=${publicKey}`)
-    //         const res = await response.json()
+    const validateUser = async()=>{
+        setIsLoading(true)
+        try{
+            const response = await fetch(`/api/users/get?walletPublicAddress=${publicKey}`)
+            const res = await response.json()
             
-    //         if(res.status == 200){
-    //             setUser(res.user)
-    //             setIsSuperUser(true)
-    //             setIsLoading(false)
+            if(res.status == 200){
+                setUser(res.user)
+                setIsSuperUser(true)
+                setIsLoading(false)
                 
-    //         } else if(res.status == 300){
-    //             setIsSuperUser(false)
-    //         }
-    //     }catch(error){
-    //         console.error(error)
-    //     }
-    // }
-    // useEffect(()=>{
-    //     validateUser()
-    // },[])
+            } else if(res.status == 300){
+                setIsSuperUser(false)
+            }
+        }catch(error){
+            console.error(error)
+        }
+    }
+    useEffect(()=>{
+        validateUser()
+    },[])
 
     if(isLoading) return <Loader />
     return(
