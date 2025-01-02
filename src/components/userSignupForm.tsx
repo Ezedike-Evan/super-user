@@ -17,9 +17,6 @@ const UserSignUpForm = () => {
 
         if (!name.trim()) newErrors.name = "Name cannot be empty"
         if (!email.trim()) newErrors.email = "Email cannot be empty"
-        if (!telegram.trim()) newErrors.telegram = "Telegram handle cannot be empty"
-        if (!discord.trim()) newErrors.discord = "Discord handle cannot be empty"
-        if (!twitter.trim()) newErrors.twitter = "Twitter handle cannot be empty"
 
         setErrors(newErrors)
         return Object.keys(newErrors).length === 0
@@ -27,15 +24,16 @@ const UserSignUpForm = () => {
 
     const handleUserSignUp = async (e: FormEvent) => {
         e.preventDefault()
-
+        setIsSubmitting(true)
+        
         if (!publicKey) {
-            console.log("Wallet is not connected")
+            setErrors({publicKey:'please connect your wallet to continue'})
+            setIsSubmitting(false)
             return
         }
 
         if (!validateInputs()) return
 
-        setIsSubmitting(true)
 
         try {
             const response = await axios.post('/api/users/post/', {
@@ -73,13 +71,14 @@ const UserSignUpForm = () => {
     }
 
     return (
-        <div id="userSignUpForm">
+        <div className="userSignUpForm">
             <p>
                 Welcome onboard super team. 
                 Let&apos;s get you locked and loaded into this rich community of Solana devs, writers, designers, etc., 
                 passionate about building on Solana. Sign up now!!
             </p>
             <form onSubmit={handleUserSignUp}>
+            {errors.publicKey && <sub style={{textAlign:'center',fontSize:20,color:'red',letterSpacing:1,textTransform:'capitalize'}}>{errors.publicKey}</sub>}
                 <label htmlFor="name">Name</label>
                 <input
                     type="text"
@@ -108,7 +107,6 @@ const UserSignUpForm = () => {
                     onChange={handleInputChange(setTelegram, 'telegram')}
                     placeholder="Enter your Telegram handle"
                 />
-                {errors.telegram && <sub>{errors.telegram}</sub>}
 
                 <label htmlFor="discord">Discord Handle</label>
                 <input
@@ -118,7 +116,6 @@ const UserSignUpForm = () => {
                     onChange={handleInputChange(setDiscord, 'discord')}
                     placeholder="Enter your Discord handle"
                 />
-                {errors.discord && <sub>{errors.discord}</sub>}
 
                 <label htmlFor="twitter">Twitter Handle</label>
                 <input
@@ -128,7 +125,6 @@ const UserSignUpForm = () => {
                     onChange={handleInputChange(setTwitter, 'twitter')}
                     placeholder="Enter your Twitter handle"
                 />
-                {errors.twitter && <sub>{errors.twitter}</sub>}
 
                 <button type="submit" disabled={isSubmitting}>
                     {isSubmitting ? "Submitting..." : "Submit"}

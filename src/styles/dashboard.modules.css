@@ -1,50 +1,58 @@
-#userSignUpForm p{
+.userSignUpForm p{
     padding: 0 40px 20px;
     text-align: center;
 }
-#userSignUpForm form{
+.userSignUpForm form{
     width: 90%;
     max-width: 400px;
     margin: 0 auto;
 }
-#userSignUpForm form label{
+.userSignUpForm form label{
     display: block;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 12px;
-    margin-top: 10px;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-top: 14px;
+    margin-bottom: 2px;
 }
-#userSignUpForm form input{
+.userSignUpForm form input,
+.userSignUpForm form textarea{
     width: 100%;
     font-size: 15px;
     padding: 3px 7px;
     font-weight: 700;
     border: 1px solid transparent;
     border-radius: 5px;
+    outline: none;
 }
-#userSignUpForm form button{
-    padding: 8px 25px;
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 20px;
-    font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif ;
-    background-color: #512da8;
-    color: white;
-    border: 1px solid transparent;
-    border-radius: 4px;
+.userSignUpForm form textarea{
+    resize: none;
+    min-height: 150px;
+    word-break: break-all;
 }
-#userSignUpForm form button:hover{
-    background-color: #1a1f2e ;
-}
-#userSignUpForm form sub{
+.userSignUpForm form sub{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: block;
     color: red;
 }
 
+#userdashboardcard{
+    background: rgba(255,255,255,0.1) ;
+    backdrop-filter: blur(15px) brightness(1.2) ;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+    margin: auto;
+    width: 600px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
 @media (max-width:500px) {
-    #userSignUpForm p{
+    .userSignUpForm p{
         padding: 0 10px 20px;
     }
 }

@@ -1,27 +1,19 @@
-import { useUser } from "@/contexts/userContext"
+import { useState } from "react"
+import CreateNewEvent from "./createNewEvent"
 const UserDashboard = ()=>{
-    const {user} = useUser()
+    const [clickEvent, setClickEvent] = useState<string>('home')
+    
+    if(clickEvent == 'create'){
+        return(
+            <CreateNewEvent />
+        )
+    } 
+
     return(
-        <>
-            <div style={{marginBottom:30}}>
-                <p>welcome back</p>
-                { user?.name }
-            </div>
-            <div>
-                <div>
-                    <p>number of community event atttended</p>
-                    0
-                </div>
-                <div>
-                    <p>number of community calls atttended</p>
-                    10
-                </div>
-                <div>
-                    <p>superteam points</p>
-                    5000
-                </div>
-            </div>
-        </>
+        <div id="userdashboardcard">
+            <button onClick={()=>setClickEvent('create')}>create new event</button>
+            <button>view all Events</button>
+        </div>
     )
 }
 

@@ -1,9 +1,9 @@
 'use client'
 import { useEffect, useState } from "react"
-import NavBar from "@/components/navbar"
-import NotConnected from "@/components/notConnected"
+import NavBar from "../components/navbar"
+import NotConnected from "../components/notConnected"
 import { useWallet } from "@solana/wallet-adapter-react"
-import Dashboard from "@/components/dashboard"
+import Dashboard from "../components/dashboard"
 
 export default function Home() {
   const [isConnected , setIsConnected] = useState(false)
@@ -12,14 +12,15 @@ export default function Home() {
     setIsConnected(connected)
   },[connected])
   return (
-    <>
+    <>  
       <header>
         <NavBar />
       </header>
       <main>
-        {
+        {/* {
         !isConnected ? <NotConnected /> : <Dashboard />
-        }
+        } */}
+        <Dashboard />
       </main>
     </>
   )

@@ -9,7 +9,7 @@
 body{
   background-color: black;
   color: white;
-  padding: 50px 100px;
+  padding: 18px 70px;
 }
 
 h2,
@@ -20,12 +20,27 @@ p
 }
 
 button{
+  background-color: #512da8;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: white;
   cursor: pointer;
+  font-family: 'DM Sans', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif ;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+button:hover,
+button:disabled{
+  background-color: #1a1f2e ;
 }
 
 nav{
   display: flex;
-  padding: 0 50px 100px;
+  padding: 0 50px 50px;
   justify-content: space-between;
   align-items: center;
 }

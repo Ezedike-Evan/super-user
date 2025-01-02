@@ -1,7 +1,7 @@
-import WalletContext from "@/contexts/walletContext"
-import { UserProvider } from "@/contexts/userContext"
-import type { Metadata } from "next";
-import "../styles/globals.css";
+import WalletContext from "../contexts/walletContext"
+import { UserProvider } from "../contexts/userContext"
+import type { Metadata } from "next"
+import "../styles/globals.css"
 
 export const metadata: Metadata = {
   title: 'super user',
