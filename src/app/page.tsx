@@ -17,10 +17,9 @@ export default function Home() {
         <NavBar />
       </header>
       <main>
-        {/* {
-        !isConnected ? <NotConnected /> : <Dashboard />
-        } */}
-        <Dashboard />
+        {
+          !isConnected ? <NotConnected /> : <Dashboard />
+        }
       </main>
     </>
   )

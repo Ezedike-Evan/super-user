@@ -26,7 +26,11 @@ const CreateNewEvent = ()=>{
     }
     return(
         <div id="userdashboardcard" className="userSignUpForm">
-            <form>
+            <form 
+                onSubmit={()=>{
+                    setIsSubmitting(true)
+                }}
+            >
                 <label htmlFor="name">Name Of The Event</label>
                 <input
                     type="text"
