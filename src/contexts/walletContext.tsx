@@ -6,7 +6,7 @@ import { clusterApiUrl } from '@solana/web3.js'
 import React, { useMemo } from 'react'
 
 const WalletContext = ({ children } : React.PropsWithChildren )=>{
-    const network = WalletAdapterNetwork.Devnet;
+    const network = WalletAdapterNetwork.Mainnet
 
     const endpoint = useMemo(() => clusterApiUrl(network), [network])
 
