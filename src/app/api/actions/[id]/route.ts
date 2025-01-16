@@ -9,7 +9,7 @@ export const GET = async (
 	req: NextRequest,
 	res: NextResponse,
 	context: Context,
-) {
+) => {
     const eventId = context.params.id;
     
     await dbConnect()
