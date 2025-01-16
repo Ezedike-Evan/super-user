@@ -49,7 +49,7 @@ const CreateNewEvent = ()=>{
             setIsSubmitting(false)
         }
     }
-    if(eventId != '') return <Link href={`https://dial.to/developer?url=http://localhost:3000/api/actions/${eventId}`}>Event link</Link>
+    if(eventId != '') return <Link href={`https://dial.to/developer?url=https://superteamuser.vercel.app/api/actions/${eventId}`}>Event link</Link>
     return(
         <div id="userdashboardcard" className="userSignUpForm">
             <form 
