@@ -5,11 +5,11 @@ import Event from "@/models/event"
 
 type Context = { params: {  id: string; } }
 
-export const GET = async (
+export async function GET(
 	req: NextRequest,
 	res: NextResponse,
 	context: Context,
-) => {
+) {
     const eventId = context.params.id;
     
     await dbConnect()
