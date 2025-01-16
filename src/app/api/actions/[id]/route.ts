@@ -3,8 +3,8 @@ import { NextRequest } from "next/server"
 import dbConnect from "@/utils/mongodb"
 import Event from "@/models/event"
 
-export async function GET( req : NextRequest , id:string){
-    const eventId = id
+export async function GET( req: NextRequest, context: { params: { id: string } } ){
+    const eventId = context.params.id;
     
     await dbConnect()
     const event = await Event.findOne({ _id:eventId })
