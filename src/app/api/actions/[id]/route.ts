@@ -3,8 +3,8 @@ import { NextRequest } from "next/server"
 import dbConnect from "@/utils/mongodb"
 import Event from "@/models/event"
 
-export async function GET( req : NextRequest , context:{params:{id:string}}){
-    const eventId = context.params.id
+export async function GET( req : NextRequest , id:string){
+    const eventId = id
     
     await dbConnect()
     const event = await Event.findOne({ _id:eventId })
@@ -15,7 +15,7 @@ export async function GET( req : NextRequest , context:{params:{id:string}}){
         icon : `${new URL(req.url).origin}/logo.jpg`,
         description,
         title : name,
-        label : 'Clickie'
+        label : 'Sign'
     }
     return Response.json(res, {headers: ACTIONS_CORS_HEADERS })
 }
