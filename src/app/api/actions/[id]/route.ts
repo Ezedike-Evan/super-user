@@ -23,7 +23,7 @@ export async function GET(
         title : name,
         label : 'Sign'
     }
-    return Response.json(payload, {headers: ACTIONS_CORS_HEADERS })
+    return res.json(payload, {headers: ACTIONS_CORS_HEADERS })
 }
 
 export const OPTIONS = GET;
