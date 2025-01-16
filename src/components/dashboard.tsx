@@ -18,18 +18,18 @@ const Dashboard = ()=>{
         try{
             const response = await fetch(`/api/users/get?walletPublicAddress=${publicKey}`)
             const res = await response.json()
-            
-            if(res.status == 200){
+            console.log(res)
+            if(res.status === 200){
                 setUser(res.user)
                 setIsSuperUser(true)
-                setIsLoading(false)
                 
-            } else if(res.status == 300){
+            } else if(res.status !== 200){
                 setIsSuperUser(false)
             }
         }catch(error){
             console.error(error)
         }
+        setIsLoading(false)
     }
     useEffect(()=>{
         validateUser()

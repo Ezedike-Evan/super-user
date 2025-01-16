@@ -19,7 +19,7 @@ export async function GET(req:NextRequest){
         }else {
             return NextResponse.json({
                 message : 'user not found',
-                status : 300
+                status : 500
             })
         }
     } catch (error) {
