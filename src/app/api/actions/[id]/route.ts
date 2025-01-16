@@ -5,7 +5,7 @@ import Event from "@/models/event"
 
 type Context = { params: {  id: string; } }
 
-export async function GET(
+export const GET = async (
 	req: NextRequest,
 	res: NextResponse,
 	context: Context,
@@ -16,14 +16,14 @@ export async function GET(
     const event = await Event.findOne({ _id:eventId })
     const {name , description } = event
 
-    const res : ActionGetResponse = {
+    const payload : ActionGetResponse = {
         type: "action",
         icon : `${new URL(req.url).origin}/logo.jpg`,
         description,
         title : name,
         label : 'Sign'
     }
-    return Response.json(res, {headers: ACTIONS_CORS_HEADERS })
+    return Response.json(payload, {headers: ACTIONS_CORS_HEADERS })
 }
 
 export const OPTIONS = GET;
