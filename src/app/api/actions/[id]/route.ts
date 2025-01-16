@@ -1,5 +1,5 @@
 import { ActionGetResponse, ACTIONS_CORS_HEADERS } from "@solana/actions"
-import { NextRequest } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import dbConnect from "@/utils/mongodb"
 import Event from "@/models/event"
 
@@ -7,6 +7,7 @@ type Context = { params: {  id: string; } }
 
 export async function GET(
 	req: NextRequest,
+	res: NextResponse,
 	context: Context,
 ) {
     const eventId = context.params.id;
