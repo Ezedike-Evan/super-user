@@ -3,9 +3,11 @@ import { NextRequest } from "next/server"
 import dbConnect from "@/utils/mongodb"
 import Event from "@/models/event"
 
+type Context = { params: {  id: string; } }
+
 export async function GET(
 	req: NextRequest,
-	context: { params: { id: String } }
+	context: Context,
 ) {
     const eventId = context.params.id;
     
