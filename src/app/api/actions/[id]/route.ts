@@ -5,7 +5,7 @@ import Event from "@/models/event"
 
 export async function GET(
 	req: NextRequest,
-	context: { params: { id: string } }
+	context: { params: { id: String } }
 ) {
     const eventId = context.params.id;
     
